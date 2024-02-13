@@ -31,30 +31,26 @@ if response.status_code == 200:
 
     related_links = [link.get('href') for link in soup.find_all('a')]
 
-    print("\033[1;31m" + "
-Website Details:" + "\033[0m")
+    print("\033[1;31m" + "\nWebsite Details:" + "\033[0m")
     print(f"Title: {soup.title.string}")
     print(f"URL: {website_url}")
 
     
-    print("\033[1;31m" + "
-Emails found:" + "\033[0m")
+    print("\033[1;31m" + "\nEmails found:" + "\033[0m")
     if not emails:
         print("None found")
     else:
         for email in emails:
             print(email)
 
-    print("\033[1;31m" + "
-Phone numbers found:" + "\033[0m")
+    print("\033[1;31m" + "\nPhone numbers found:" + "\033[0m")
     if not phone_numbers:
         print("None found")
     else:
         for phone_number in phone_numbers:
             print(phone_number)
 
-    print("\033[1;31m" + "
-Related Links:" + "\033[0m")
+    print("\033[1;31m" + "\nRelated Links:" + "\033[0m")
     if not related_links:
         print("None found")
     else:
@@ -65,5 +61,4 @@ else:
     print(f"Error accessing the website. Status code: {response.status_code}")
 
 
-input("\033[1;31m" + "
-Press Enter to exit..." + "\033[0m")
+input("\033[1;31m" + "\nPress Enter to exit..." + "\033[0m")
